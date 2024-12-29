@@ -14,18 +14,18 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . --use-pep517 -vvv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - base58 >=2.1.0
     - coincurve >=15.0.0,<20
     - pip
-    - python >=3.8.0
+    - python {{ python_min }}
   run:
     - base58 >=2.1.0
     - coincurve >=15.0.0,<20
-    - python >=3.8.0
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -33,6 +33,7 @@ test:
   requires:
     - pip
     - pytest
+    - python {{ python_min }}
   source_files:
     - tests/
   commands:
