@@ -8,8 +8,8 @@ package:
 source:
   url: https://github.com/darosior/python-bip32/archive/refs/tags/{{ version }}.tar.gz
   sha256: c79948e40db011410b7294eb44673c5624f787119118e5c3ea449b1356e0c4d6
-  patches:
-    - fix-coincurve-version.patch
+  # patches:
+  #   - fix-coincurve-version.patch
 
 build:
   noarch: python
